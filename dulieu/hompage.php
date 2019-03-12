@@ -176,7 +176,7 @@
                   <?php 
                       } else {
                   ?>
-                    <a href="http://localhost:8080/HUBPHPCHAMDIEM/showde.php" class="primary-btn2 mb-3 mb-sm-0"> Vào Chọn Đề ... </a>
+                    <a href='?thread=showde' class="primary-btn2 mb-3 mb-sm-0"> Vào Chọn Đề ... </a>
                   <?php 
                       }
                   ?>
