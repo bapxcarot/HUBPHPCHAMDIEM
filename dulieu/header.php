@@ -58,7 +58,7 @@
               <?php 
                 } else {
                   
-                    if($_SESSION['user_id']!=0 && $_SESSION['admin']==1)
+                    if($_SESSION['user_me']!=0 && $_SESSION['admin']==1)
                     {
               ?>
                         <li class="nav-item">
