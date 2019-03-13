@@ -45,11 +45,10 @@
                         ?>
                         <tr>
                           <h4> Câu <?php echo $row['idcauhoi']?>: <?php echo $row['tencauhoi'] ?></h4>
-
-                          <p><input type="radio"value="A" id=" "> <label>A. <?php echo $row['traloi1'] ?></label></p>
-                          <p><input type="radio"value="A" id=" "> <label>B. <?php echo $row['traloi2'] ?></label></p>
-                          <p><input type="radio"value="A" id=" "> <label>C. <?php echo $row['traloi3'] ?></label></p>
-                          <p><input type="radio"value="A" id=" "> <label>D. <?php echo $row['traloi4'] ?></label></p>
+                            <input type="radio" name="result-<?php echo $row['idcauhoi']?>" value="" id=" "> A. <?php echo $row['traloi1'] ?> </br>
+                            <input type="radio" name="result-<?php echo $row['idcauhoi']?>" value="" id=" "> B. <?php echo $row['traloi2'] ?> </br>
+                            <input type="radio" name="result-<?php echo $row['idcauhoi']?>" value="" id=" "> C. <?php echo $row['traloi3'] ?> </br>
+                            <input type="radio" name="result-<?php echo $row['idcauhoi']?>" value="" id=" "> D. <?php echo $row['traloi4'] ?> </br>
                         </tr>
                         <?php
                           }
