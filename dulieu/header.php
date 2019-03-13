@@ -43,21 +43,21 @@
         >
           <ul class="nav navbar-nav menu_nav ml-auto">
             <li class="nav-item active">
-              <a class="nav-link" href="index.html">Trang chủ</a>
+              <a class="nav-link" href="">Trang chủ</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="about-us.html">Về chúng tôi</a>
+              <a class="nav-link" href="">Về chúng tôi</a>
             </li>
               <?php
                 if (!isset($_SESSION['user_me']))
                 {
               ?>
                     <li class="nav-item">
-                      <a class="nav-link" href="contact.html">Liên hệ</a>
+                      <a class="nav-link" href="">Liên hệ</a>
                     </li>
-              <?php 
+              <?php
                 } else {
-                  
+
                     if($_SESSION['user_me']!=0 && $_SESSION['admin']==1)
                     {
               ?>
@@ -80,7 +80,7 @@
                         <li class="nav-item">
                           <a class="nav-link" href="?thread=logout">Đăng xuất</a>
                         </li>
-              <?php 
+              <?php
                     }
                   }
               ?>
