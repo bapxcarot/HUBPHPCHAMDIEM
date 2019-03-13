@@ -1,3 +1,11 @@
+
+<?php
+    header('Content-Type: text/html; charset=UTF-8');
+    /*require_once("connect.php"); */
+?>
+
+<!DOCTYPE html>
+
 <?php
   require_once("mysql.php");
   $conn = new mysqli($db_host, $db_username, $db_password, $db_name);
@@ -8,48 +16,40 @@
     }
 ?>
 
+<html lang="en">
 
 
-    <!--================ Start About Area =================-->
     <section class="about_area section_gap">
       <div class="container">
         <div class="row h_blog_item">
-          <div class="col-lg-6">
-            <div class="h_blog_img">
-              <img class="img-fluid" src="img/chamdiem.png" alt="" />
-            </div>
-          </div>
-          <div class="col-lg-6">
-            <div class="h_blog_text">
-              <div class="h_blog_text_inner left right">
-                <h4> ĐỀ THI </h4>
-
                 <div class="row">
-                  <div class="col-md-8 col-md-offset-2">
+                  <div >
                     <table class="table table-hover">
                       <thead>
-                          <td> Mã Đề </td>
-                          <td> Tên Đề </td>
+
                       </thead>
                       <tbody>
                         <!-- <?php
-                          $result=$conn->query("SELECT * FROM made");
+                          $result=$conn->query("SELECT * FROM cauhoi" );
                           while ($row = $result->fetch_assoc()) {
-                          # code...
                         ?>
-                        <p> Dữ liệu được xuất ra </p>
-                        <?php echo $row['idmade'];
+                        <p> D? li?u du?c xu?t ra </p>
+                        <?php echo $row['idcauhoi'];
                         }
                         ?>
-                        <?php echo $row['tenmade']
-                        ?> -->
+
+                       -->
                         <?php
-                          $result=$conn->query("SELECT * FROM made");
+                          $result=$conn->query("SELECT * FROM cauhoi");
                           while ($row = $result->fetch_assoc()) {
                         ?>
                         <tr>
-                          <td> <?php echo $row['idmade'] ?></td>
-                          <td> <a href="?thread=showcauhoi"><?php echo $row['tenmade'] ?></a></td>
+                          <h4> Câu <?php echo $row['idcauhoi']?>: <?php echo $row['tencauhoi'] ?></h4>
+
+                          <p><input type="radio"value="A" id=" "> <label>A. <?php echo $row['traloi1'] ?></label></p>
+                          <p><input type="radio"value="A" id=" "> <label>B. <?php echo $row['traloi2'] ?></label></p>
+                          <p><input type="radio"value="A" id=" "> <label>C. <?php echo $row['traloi3'] ?></label></p>
+                          <p><input type="radio"value="A" id=" "> <label>D. <?php echo $row['traloi4'] ?></label></p>
                         </tr>
                         <?php
                           }
@@ -61,9 +61,11 @@
                 <a class="primary-btn" href="#">
                   Learn More <i class="ti-arrow-right ml-1"></i>
                 </a>
-              </div>
             </div>
           </div>
         </div>
       </div>
     </section>
+
+  </body>
+</html>
