@@ -35,5 +35,10 @@
 			include_once("dulieu/showcauhoi.php");
 			break;
 		}
+		case "abouts":
+		{
+			include_once("dulieu/abouts.php");
+			break;
+		}
 	}
 ?>
