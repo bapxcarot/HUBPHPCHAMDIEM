@@ -43,10 +43,10 @@
         >
           <ul class="nav navbar-nav menu_nav ml-auto">
             <li class="nav-item active">
-              <a class="nav-link" href="">Trang chủ</a>
+              <a class="nav-link" href="?thread=home">Trang chủ</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="">Về chúng tôi</a>
+              <a class="nav-link" href="?thread=abouts">Về chúng tôi</a>
             </li>
               <?php
                 if (!isset($_SESSION['user_me']))
