@@ -40,5 +40,10 @@
 			include_once("dulieu/abouts.php");
 			break;
 		}
+		case "contact":
+		{
+			include_once("dulieu/contact.php");
+			break;
+		}
 	}
 ?>
