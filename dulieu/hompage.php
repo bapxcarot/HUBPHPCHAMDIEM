@@ -411,7 +411,7 @@
           </div>
           <div class="col-lg-6 col-md-6">
             <div class="single_event position-relative">
-              <div class="event_thumb">
+              <div class="event_thumb" style="height:330px;">
                 <img src="img/event/e2.jpg" alt="" />
               </div>
               <div class="event_details">
