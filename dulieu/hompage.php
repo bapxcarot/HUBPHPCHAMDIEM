@@ -224,10 +224,12 @@
           </div>
 
           <div class="col-lg-4 col-md-6">
+            <a href='?thread=showdetoan'>
             <div class="single_feature">
               <div class="icon"><span class="flaticon-book"></span></div>
               <div class="desc">
                 <h4 class="mt-3 mb-2">Toán</h4>
+            </a>
                 <p>
                   Con số vốn khó hiểu, hãy giải tất cả để mọi thứ từ trừu tượng thành hiện thực, thành những con số giá trị <3
                 </p>

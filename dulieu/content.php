@@ -45,5 +45,15 @@
 			include_once("dulieu/contact.php");
 			break;
 		}
+		case "showdetoan":
+		{
+			include_once("dulieu/showdetoan.php");
+			break;
+		}
+		case "showcauhoitoan":
+		{
+			include_once("dulieu/showcauhoitoan.php");
+			break;
+		}
 	}
 ?>
