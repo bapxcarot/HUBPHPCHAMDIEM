@@ -53,12 +53,12 @@
                             <h4> Câu <?php echo $row['idcauhoitoan']?>: <?php echo $row['tencauhoi'] ?></h4>
                           <table>
                           <tr>
-                            <td> <input type="radio" name="<?php echo $row['idcauhoitoan']?>" value="A" id="A"> A.   <img src="<?php echo $row['traloi1']; ?>" class="img-responsive" width="80px" height="60px"> </br></td>
-                            <td> <input type="radio" name="<?php echo $row['idcauhoitoan']?>" value="B" id="B"> B.   <img src="<?php echo $row['traloi2']; ?>" class="img-responsive" width="80px" height="60px"> </br></td>
+                            <td> <input type="radio" name="<?php echo $row['idcauhoitoan']?>" value="A" id="A"> A.   <img src="<?php echo $row['traloi1']; ?>" class="img-responsive" > </br></td>
+                            <td> <input type="radio" name="<?php echo $row['idcauhoitoan']?>" value="B" id="B"> B.   <img src="<?php echo $row['traloi2']; ?>" class="img-responsive" > </br></td>
                           </tr>
                           <tr>
-                            <td> <input type="radio" name="<?php echo $row['idcauhoitoan']?>" value="C" id="C"> C.   <img src="<?php echo $row['traloi3']; ?>" class="img-responsive" width="80px" height="60px"> </br></td>
-                            <td> <input type="radio" name="<?php echo $row['idcauhoitoan']?>" value="D" id="D"> D.   <img src="<?php echo $row['traloi4']; ?>" class="img-responsive" width="80px" height="60px"> </br></td>
+                            <td> <input type="radio" name="<?php echo $row['idcauhoitoan']?>" value="C" id="C"> C.   <img src="<?php echo $row['traloi3']; ?>" class="img-responsive" > </br></td>
+                            <td> <input type="radio" name="<?php echo $row['idcauhoitoan']?>" value="D" id="D"> D.   <img src="<?php echo $row['traloi4']; ?>" class="img-responsive" > </br></td>
                           </tr>
                         </table>
                           <?php
