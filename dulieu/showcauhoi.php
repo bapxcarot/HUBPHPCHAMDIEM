@@ -7,6 +7,7 @@
 <!DOCTYPE html>
 
 <?php
+  $idch=$_GET['idcauh'];
   require_once("mysql.php");
   $conn = new mysqli($db_host, $db_username, $db_password, $db_name);
   mysqli_set_charset($conn, 'UTF8');
@@ -14,10 +15,25 @@
     {
         die("Không thể kết nối CSDL. Code: " . $conn->connect_error);
     }
+  $DIEM=0;
+  if(isset($_POST['ook'])){
+    $arr=$_POST;
+    foreach ($arr as $key => $value) {
+      if(is_numeric($key)){
+        $sqll="SELECT dapan from cauhoi where idcauhoi={$key} limit 1";
+        $result1=$conn->query($sqll);
+        while ($dad = $result1->fetch_assoc()) {
+        if($value==$dad['dapan']){
+          $DIEM=$DIEM+1;
+        }
+      }
+      }
+    }
+    print "<script language='JavaScript'>alert('Số điểm bạn đạt được là: {$DIEM}');</script>";
+    print "<meta http-equiv='refresh' content='0; index.php?thread=showde'>";
+    // echo "Số diểm đạt được là: {$DIEM}";
+  }
 ?>
-
-<html lang="en">
-
 
     <section class="about_area section_gap">
       <div class="container">
@@ -28,43 +44,41 @@
                       <thead>
 
                       </thead>
-                      <tbody>
-                        <!-- <?php
-                          $result=$conn->query("SELECT * FROM cauhoi" );
-                          while ($row = $result->fetch_assoc()) {
-                        ?>
-                        <p> D? li?u du?c xu?t ra </p>
-                        <?php echo $row['idcauhoi'];
-                        }
-                        ?>
 
-                       -->
-                        <?php
-                          $result=$conn->query("SELECT * FROM cauhoi");
-                          while ($row = $result->fetch_assoc()) {
-                        ?>
-                        <tr>
-                          <h4> Câu <?php echo $row['idcauhoi']?>: <?php echo $row['tencauhoi'] ?></h4>
-                            <input type="radio" name="result-<?php echo $row['idcauhoi']?>" value="" id=" "> A. <?php echo $row['traloi1'] ?> </br>
-                            <input type="radio" name="result-<?php echo $row['idcauhoi']?>" value="" id=" "> B. <?php echo $row['traloi2'] ?> </br>
-                            <input type="radio" name="result-<?php echo $row['idcauhoi']?>" value="" id=" "> C. <?php echo $row['traloi3'] ?> </br>
-                            <input type="radio" name="result-<?php echo $row['idcauhoi']?>" value="" id=" "> D. <?php echo $row['traloi4'] ?> </br>
-                        </tr>
-                        <?php
-                          }
-                        ?>
-          </tbody>
-        </table>
-      </div>
-    </div>
-                <a class="primary-btn" href="#">
-                  Learn More <i class="ti-arrow-right ml-1"></i>
-                </a>
+                        <tbody>
+                          <form action="" method="post">
+                            <?php
+                              $result=$conn->query("SELECT * FROM cauhoi WHERE idmade={$idch}");
+                              while ($row = $result->fetch_assoc()) {
+                            ?>
+                            <h4> Câu <?php echo $row['idcauhoi']?>: <?php echo $row['tencauhoi'] ?></h4>
+                          <table>
+                          <tr>
+                            <td> <input type="radio" name="<?php echo $row['idcauhoi']?>" value="A" id="A"> A.   <?php echo $row['traloi1'] ?> </br></td>
+                            <td> <input type="radio" name="<?php echo $row['idcauhoi']?>" value="B" id="B"> B.   <?php echo $row['traloi2'] ?> </br></td>
+                          </tr>
+                          <tr>
+                            <td> <input type="radio" name="<?php echo $row['idcauhoi']?>" value="C" id="C"> C.   <?php echo $row['traloi3'] ?> </br></td>
+                            <td> <input type="radio" name="<?php echo $row['idcauhoi']?>" value="D" id="D"> D.   <?php echo $row['traloi4'] ?> </br></td>
+
+                          </tr>
+                        </table>
+                        <br>
+                          <?php
+                            }
+                          ?>
+                          <br><br><br>
+                          <input type="submit" name="ook" value="Hoàn Thành">
+                        </tbody>
+
+                    </table>
+                  </div>
+                </div>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-  </body>
-</html>
+
+</form>

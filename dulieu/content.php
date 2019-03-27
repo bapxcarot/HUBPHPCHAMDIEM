@@ -40,5 +40,20 @@
 			include_once("dulieu/abouts.php");
 			break;
 		}
+		case "contact":
+		{
+			include_once("dulieu/contact.php");
+			break;
+		}
+		case "showdetoan":
+		{
+			include_once("dulieu/showdetoan.php");
+			break;
+		}
+		case "showcauhoitoan":
+		{
+			include_once("dulieu/showcauhoitoan.php");
+			break;
+		}
 	}
 ?>

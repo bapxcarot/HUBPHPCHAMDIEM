@@ -53,7 +53,7 @@
                 {
               ?>
                     <li class="nav-item">
-                      <a class="nav-link" href="">Liên hệ</a>
+                      <a class="nav-link" href="?thread=contact">Liên hệ</a>
                     </li>
               <?php
                 } else {

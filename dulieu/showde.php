@@ -44,12 +44,12 @@
                         <?php echo $row['tenmade']
                         ?> -->
                         <?php
-                          $result=$conn->query("SELECT * FROM made");
+                          $result=$conn->query("SELECT * FROM made limit 3");
                           while ($row = $result->fetch_assoc()) {
                         ?>
                         <tr>
                           <td> <?php echo $row['idmade'] ?></td>
-                          <td> <a href="?thread=showcauhoi"><?php echo $row['tenmade'] ?></a></td>
+                          <td> <a href="?thread=showcauhoi&idcauh=<?php echo $row['idmade']; ?>"><?php echo $row['tenmade'] ?></a></td>
                         </tr>
                         <?php
                           }
