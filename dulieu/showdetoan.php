@@ -44,12 +44,12 @@
                         <?php echo $row['tenmade']
                         ?> -->
                         <?php
-                          $result=$conn->query("SELECT * FROM made WHERE idmade=4");
+                          $result=$conn->query("SELECT * FROM made WHERE idmade=4 OR idmade=5");
                           while ($row = $result->fetch_assoc()) {
                         ?>
                         <tr>
                           <td> <?php echo $row['idmade'] ?></td>
-                          <td> <a href="?thread=showcauhoitoan"><?php echo $row['tenmade'] ?></a></td>
+                          <td> <a href="?thread=showcauhoitoan&idmad=<?php echo $row['idmade'] ?>"><?php echo $row['tenmade'] ?></a></td>
                         </tr>
                         <?php
                           }
