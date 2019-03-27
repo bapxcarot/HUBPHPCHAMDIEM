@@ -7,7 +7,6 @@
 <!DOCTYPE html>
 
 <?php
-  $idch=$_GET['idcauh'];
   require_once("mysql.php");
   $conn = new mysqli($db_host, $db_username, $db_password, $db_name);
   mysqli_set_charset($conn, 'UTF8');
@@ -20,7 +19,7 @@
     $arr=$_POST;
     foreach ($arr as $key => $value) {
       if(is_numeric($key)){
-        $sqll="SELECT dapan from cauhoi where idcauhoi={$key} limit 1";
+        $sqll="SELECT dapan from cauhoitoan where idcauhoitoan={$key} limit 1";
         $result1=$conn->query($sqll);
         while ($dad = $result1->fetch_assoc()) {
         if($value==$dad['dapan']){
@@ -30,7 +29,7 @@
       }
     }
     print "<script language='JavaScript'>alert('Số điểm bạn đạt được là: {$DIEM}');</script>";
-    print "<meta http-equiv='refresh' content='0; index.php?thread=showde'>";
+    print "<meta http-equiv='refresh' content='0; index.php?thread=showdetoan'>";
     // echo "Số diểm đạt được là: {$DIEM}";
   }
 ?>
@@ -48,22 +47,20 @@
                         <tbody>
                           <form action="" method="post">
                             <?php
-                              $result=$conn->query("SELECT * FROM cauhoi WHERE idmade={$idch}");
+                              $result=$conn->query("SELECT * FROM cauhoitoan");
                               while ($row = $result->fetch_assoc()) {
                             ?>
-                            <h4> Câu <?php echo $row['idcauhoi']?>: <?php echo $row['tencauhoi'] ?></h4>
+                            <h4> Câu <?php echo $row['idcauhoitoan']?>: <?php echo $row['tencauhoi'] ?></h4>
                           <table>
                           <tr>
-                            <td> <input type="radio" name="<?php echo $row['idcauhoi']?>" value="A" id="A"> A.   <?php echo $row['traloi1'] ?> </br></td>
-                            <td> <input type="radio" name="<?php echo $row['idcauhoi']?>" value="B" id="B"> B.   <?php echo $row['traloi2'] ?> </br></td>
+                            <td> <input type="radio" name="<?php echo $row['idcauhoitoan']?>" value="A" id="A"> A.   <img src="<?php echo $row['traloi1']; ?>" class="img-responsive" > </br></td>
+                            <td> <input type="radio" name="<?php echo $row['idcauhoitoan']?>" value="B" id="B"> B.   <img src="<?php echo $row['traloi2']; ?>" class="img-responsive" > </br></td>
                           </tr>
                           <tr>
-                            <td> <input type="radio" name="<?php echo $row['idcauhoi']?>" value="C" id="C"> C.   <?php echo $row['traloi3'] ?> </br></td>
-                            <td> <input type="radio" name="<?php echo $row['idcauhoi']?>" value="D" id="D"> D.   <?php echo $row['traloi4'] ?> </br></td>
-
+                            <td> <input type="radio" name="<?php echo $row['idcauhoitoan']?>" value="C" id="C"> C.   <img src="<?php echo $row['traloi3']; ?>" class="img-responsive" > </br></td>
+                            <td> <input type="radio" name="<?php echo $row['idcauhoitoan']?>" value="D" id="D"> D.   <img src="<?php echo $row['traloi4']; ?>" class="img-responsive" > </br></td>
                           </tr>
                         </table>
-                        <br>
                           <?php
                             }
                           ?>
