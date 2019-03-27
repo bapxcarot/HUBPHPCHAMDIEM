@@ -8,6 +8,7 @@
 
 <?php
   $idch=$_GET['idcauh'];
+  $dem=0;
   require_once("mysql.php");
   $conn = new mysqli($db_host, $db_username, $db_password, $db_name);
   mysqli_set_charset($conn, 'UTF8');
@@ -50,9 +51,10 @@
                             <?php
                               $result=$conn->query("SELECT * FROM cauhoi WHERE idmade={$idch}");
                               while ($row = $result->fetch_assoc()) {
+                                $dem=$dem+1;
                             ?>
-                            <h4> Câu <?php echo $row['idcauhoi']?>: <?php echo $row['tencauhoi'] ?></h4>
-                          <table>
+                            <h4> Câu <?php echo $dem?>: <?php echo $row['tencauhoi'] ?></h4>
+                          <table width="1000px">
                           <tr>
                             <td> <input type="radio" name="<?php echo $row['idcauhoi']?>" value="A" id="A"> A.   <?php echo $row['traloi1'] ?> </br></td>
                             <td> <input type="radio" name="<?php echo $row['idcauhoi']?>" value="B" id="B"> B.   <?php echo $row['traloi2'] ?> </br></td>
